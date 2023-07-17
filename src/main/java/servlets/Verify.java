@@ -2,7 +2,6 @@ package servlets;
 
 
 import com.google.gson.Gson;
-import dataBase.RefreshDTO;
 import dto.otp.AccessToken;
 
 import javax.servlet.ServletException;
@@ -19,19 +18,15 @@ public class Verify extends HttpServlet {
         String identity = req.getParameter("identity");
         String otp = req.getParameter("otp");
         AccessToken result;
-        RefreshDTO refreshDTO = new RefreshDTO();
         try {
             result = LoginApplication.oauth2Service.otpVerify(keyId, identity, otp);
-            refreshDTO.setRefreshToken(result.getRefreshToken());
-            refreshDTO.setKeyId(keyId);
-            LoginApplication.provider.create(refreshDTO);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
         PrintWriter writer;
         resp.setContentType(MediaType.APPLICATION_JSON);
         writer = resp.getWriter();
-        writer.write(new Gson().toJson(result.getAccessToken()));
+        writer.write(new Gson().toJson(result));
         writer.close();
     }
 }

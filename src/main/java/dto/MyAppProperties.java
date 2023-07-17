@@ -30,12 +30,6 @@ public class MyAppProperties {
     private String scope;
     private String otpSignature;
     private Integer serverPort;
-    private Boolean isOracle;
-    private String databaseHost;
-    private String databasePort;
-    private String databaseName;
-    private String databaseUsername;
-    private String databasePassword;
 
     public static MyAppProperties loadResourceConfig() throws IOException, NullPointerException, InvalidPathException {
         InputStream inputStream = Main.class.getResourceAsStream("/config.json");

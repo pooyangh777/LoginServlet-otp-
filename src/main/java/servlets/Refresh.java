@@ -1,7 +1,6 @@
 package servlets;
 
 import com.google.gson.Gson;
-import dataBase.RefreshDTO;
 import dto.otp.AccessToken;
 
 import javax.servlet.http.HttpServlet;
@@ -14,9 +13,8 @@ public class Refresh extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
-        String keyId = req.getHeader("keyId");
-        RefreshDTO byKeyId = LoginApplication.provider.findByKeyId(keyId);
-        AccessToken result = LoginApplication.oauth2Service.refresh(byKeyId.getRefreshToken());
+        String refreshToken = req.getParameter("refreshToken");
+        AccessToken result = LoginApplication.oauth2Service.refresh(refreshToken);
         PrintWriter writer;
         resp.setContentType(MediaType.APPLICATION_JSON);
         try {
@@ -24,7 +22,7 @@ public class Refresh extends HttpServlet {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        writer.write(new Gson().toJson(result.getAccessToken()));
+        writer.write(new Gson().toJson(result));
         writer.close();
     }
 }
