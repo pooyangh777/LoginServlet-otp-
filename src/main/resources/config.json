@@ -1,0 +1,16 @@
+{
+  "serverUrl": "https://podtest.fanapsoft.ir",
+  "clientId": "368476r1bd34b78a31e12916368aff9",
+  "clientSecret": "805bbba32c044ea7",
+  "apiToken": "5b4f588bc8214269912cfc31646579ee.XzIwMjN3Mjc",
+  "serverRedirectUrl": "https://www.google.com/",
+  "scope": "social_write,social_profile,social_profile_write,social,client,client_write",
+  "otpSignature": "OoXS0wv9KWRpgeL1z4ea5QJ8bPX1ZJtzQLIhCdQcNSnE8OY7tgsJiZRXCxIAlxISDhw+IGNdc8Xxw/uSB6+AyxryNpi+wctUSsTZNJsdaxXwwhNCBqS805+7jAuEitl75dcHeO+L0QICOIwIxX0bVY6wSechTKnmqiz5RUiB9RU=",
+  "serverPort": 8080,
+  "databaseHost": "localhost",
+  "databasePort": "3306",
+  "databaseName": "refreshtoken",
+  "databaseUsername": "pooya",
+  "databasePassword": "DARKsky@386100",
+  "isOracle": false
+}
