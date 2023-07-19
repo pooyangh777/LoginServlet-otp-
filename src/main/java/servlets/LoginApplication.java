@@ -10,13 +10,13 @@ import static dto.MyAppProperties.loadResourceConfig;
 
 public class LoginApplication {
     public static Oauth2Service oauth2Service;
-    public static void start() {
-        MyAppProperties config = null;
-        try {
-            config = loadResourceConfig();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+    public static void start(MyAppProperties config) {
+//        MyAppProperties config = null;
+//        try {
+//            config = loadResourceConfig();
+//        } catch (IOException e) {
+//            throw new RuntimeException(e);
+//        }
         assert config != null;
         oauth2Service = new Oauth2Service(config);
         Server server = new Server(config.getServerPort());
