@@ -1,12 +1,12 @@
 package servlets;
 
-import application.Main;
-import com.google.gson.Gson;
 
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import com.google.gson.Gson;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
 import javax.ws.rs.core.MediaType;
 import java.io.*;
 
@@ -19,7 +19,7 @@ public class Authorize extends HttpServlet {
 //        String payload = req.getParameter("payload");
         dto.otp.Authorize result = null;
         try {
-            result = LoginApplication.oauth2Service.otpAuthorize(keyId, identity, req);
+            result = EmbeddedHttpServer.oauth2Service.otpAuthorize(keyId, identity, req);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

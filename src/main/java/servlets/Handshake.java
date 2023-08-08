@@ -1,16 +1,11 @@
 package servlets;
-
-
-import application.Main;
-
-
 import com.google.gson.Gson;
 import dto.DeviceType;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.core.MediaType;
 import java.io.*;
 
@@ -31,7 +26,7 @@ public class Handshake extends HttpServlet {
             resp.getWriter().write("The 'requiredParam1' and 'requiredParam2' parameters are required.");
         } else {
             dto.otp.Handshake result = null;
-            result = LoginApplication.oauth2Service.otpHandshake(deviceUID, deviceName, deviceType, deviceOs, deviceOsVersion, req, resp);
+            result = EmbeddedHttpServer.oauth2Service.otpHandshake(deviceUID, deviceName, deviceType, deviceOs, deviceOsVersion, req, resp);
             PrintWriter writer;
             resp.setContentType(MediaType.APPLICATION_JSON);
             writer = resp.getWriter();

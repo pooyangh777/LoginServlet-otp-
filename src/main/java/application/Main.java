@@ -2,7 +2,7 @@ package application;
 
 
 import dto.MyAppProperties;
-import servlets.LoginApplication;
+import servlets.EmbeddedHttpServer;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -24,6 +24,6 @@ public class Main {
             throw new RuntimeException(e);
         }
         System.out.println("******************************************");
-        LoginApplication.start(config);
+        EmbeddedHttpServer.start(config);
     }
 }

@@ -4,11 +4,7 @@ import dto.MyAppProperties;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 
-import java.io.IOException;
-
-import static dto.MyAppProperties.loadResourceConfig;
-
-public class LoginApplication {
+public class EmbeddedHttpServer {
     public static Oauth2Service oauth2Service;
     public static void start(MyAppProperties config) {
 //        MyAppProperties config = null;
