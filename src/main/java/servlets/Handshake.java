@@ -26,7 +26,7 @@ public class Handshake extends HttpServlet {
             resp.getWriter().write("The 'requiredParam1' and 'requiredParam2' parameters are required.");
         } else {
             dto.otp.Handshake result = null;
-            result = EmbeddedHttpServer.oauth2Service.otpHandshake(deviceUID, deviceName, deviceType, deviceOs, deviceOsVersion, req, resp);
+            result = Oauth2Service.otpHandshake(deviceUID, deviceName, deviceType, deviceOs, deviceOsVersion, req, resp);
             PrintWriter writer;
             resp.setContentType(MediaType.APPLICATION_JSON);
             writer = resp.getWriter();

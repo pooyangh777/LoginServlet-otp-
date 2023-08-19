@@ -9,21 +9,15 @@ import java.net.URISyntaxException;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(args.toString());
-        if (args.length == 0) {
-            try {
-                throw new Exception("You must set a config json file path.");
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
-        }
+        String filePath = "/etc/java/BackTalk/settings.json";
         MyAppProperties config = null;
         try {
-            config = MyAppProperties.loadExternalConfig(args[0]);
+            config = MyAppProperties.loadExternalConfig(filePath);
         } catch (IOException | URISyntaxException e) {
             throw new RuntimeException(e);
         }
         System.out.println("******************************************");
-        EmbeddedHttpServer.start(config);
+        EmbeddedHttpServer server = new EmbeddedHttpServer();
+        server.start(config);
     }
 }

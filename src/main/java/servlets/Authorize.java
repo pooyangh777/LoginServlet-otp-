@@ -19,7 +19,7 @@ public class Authorize extends HttpServlet {
 //        String payload = req.getParameter("payload");
         dto.otp.Authorize result = null;
         try {
-            result = EmbeddedHttpServer.oauth2Service.otpAuthorize(keyId, identity, req);
+            result = Oauth2Service.otpAuthorize(keyId, identity, req);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

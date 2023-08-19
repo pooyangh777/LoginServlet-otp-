@@ -13,7 +13,7 @@ public class Refresh extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
         String refreshToken = req.getParameter("refreshToken");
-        AccessToken result = EmbeddedHttpServer.oauth2Service.refresh(refreshToken);
+        AccessToken result = Oauth2Service.refresh(refreshToken);
         PrintWriter writer;
         resp.setContentType(MediaType.APPLICATION_JSON);
         try {

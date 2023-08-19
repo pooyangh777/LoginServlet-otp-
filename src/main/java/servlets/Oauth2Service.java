@@ -15,13 +15,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Oauth2Service {
-    private String serverUrl;
-    private String clientId;
-    private String clientSecret;
-    private String apiToken;
-    private String serverRedirectUrl;
-    private String scope;
-    private String otpSignature;
+    private  static String serverUrl;
+    private static String clientId;
+    private static String clientSecret;
+    private static String apiToken;
+    private static String serverRedirectUrl;
+    private static String scope;
+    private static String otpSignature;
     MyAppProperties myAppProperties;
 
     public Oauth2Service(MyAppProperties myAppProperties) {
@@ -40,7 +40,7 @@ public class Oauth2Service {
     }
 
 
-    public dto.otp.Handshake otpHandshake(String deviceUID, String deviceName, DeviceType deviceType, String deviceOS, String deviceOsVersion, HttpServletRequest req, HttpServletResponse resp) throws IOException {
+    public static dto.otp.Handshake otpHandshake(String deviceUID, String deviceName, DeviceType deviceType, String deviceOS, String deviceOsVersion, HttpServletRequest req, HttpServletResponse resp) throws IOException {
         StringBuilder urlBuilder;
         try {
             urlBuilder = new StringBuilder(serverUrl).append("/oauth2/clients/handshake/").append(clientId)
@@ -70,7 +70,7 @@ public class Oauth2Service {
     }
 
 
-    public dto.otp.Authorize otpAuthorize(String keyId, String identity, HttpServletRequest request) throws Exception {
+    public static dto.otp.Authorize otpAuthorize(String keyId, String identity, HttpServletRequest request) throws Exception {
         StringBuilder urlBuilder = null;
         try {
             urlBuilder = new StringBuilder(serverUrl)
@@ -86,7 +86,7 @@ public class Oauth2Service {
         return authorize;
     }
 
-    public AccessToken otpVerify(String keyId, String identity, String otp) throws Exception {
+    public static AccessToken otpVerify(String keyId, String identity, String otp) throws Exception {
         try {
             String builder = serverUrl +
                     "/oauth2/otp/verify/" + URLEncoder.encode(identity, StandardCharsets.UTF_8.toString()) +
@@ -101,7 +101,7 @@ public class Oauth2Service {
         }
     }
 
-    public AccessToken getOtpAccessToken(String code, String keyId) throws IOException {
+    public static AccessToken getOtpAccessToken(String code, String keyId) throws IOException {
 
         String builder = serverUrl +
                 "/oauth2/token/" +
@@ -117,9 +117,9 @@ public class Oauth2Service {
         return accessToken;
     }
 
-    public AccessToken refresh(String refreshToken) {
+    public static AccessToken refresh(String refreshToken) {
 
-        String builder = "https://podtest.fanapsoft.ir" +
+        String builder = "https://sso-sandbox.pod.ir" +
                 "/oauth2/token/" +
                 "?" + "grant_type=" + "refresh_token" +
                 "&" + "refresh_token=" + refreshToken +
@@ -134,7 +134,7 @@ public class Oauth2Service {
         return accessToken;
     }
 
-    private Map<String, String> getSignHeaderMap(String keyId) {
+    private static Map<String, String> getSignHeaderMap(String keyId) {
         Map<String, String> header = new HashMap<>();
         header.put("Content-Type", "application/x-www-form-urlencoded");
 

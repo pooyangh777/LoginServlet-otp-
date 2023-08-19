@@ -19,7 +19,7 @@ public class Verify extends HttpServlet {
         String otp = req.getParameter("otp");
         AccessToken result;
         try {
-            result = EmbeddedHttpServer.oauth2Service.otpVerify(keyId, identity, otp);
+            result = Oauth2Service.otpVerify(keyId, identity, otp);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
