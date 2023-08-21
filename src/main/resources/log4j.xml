@@ -1,0 +1,27 @@
+<Configuration status="info" monitorInterval="1">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%-5p [%t] %d %c %x - %m%n" />
+        </Console>
+        <RollingFile name="DG2" fileName="E:/JAVAintelliJ/backTalk/stream-recording.log" filePattern="E:/JAVAintelliJ/backTalk/stream-recording.log.%i.gz" append="true">
+            <PatternLayout pattern="%-5p [%t] %d %c %x - %m%n"/>
+            <SizeBasedTriggeringPolicy size="30 MB" />
+            <DefaultRolloverStrategy max="10"/>
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <Logger name="org.eclipse.jetty.util.ssl" level="ERROR">
+            <AppenderRef ref="DG2"/>
+        </Logger>
+        <Logger name="org.eclipse.jetty" level="WARN">
+            <AppenderRef ref="DG2"/>
+        </Logger>
+
+        <Root level="INFO">
+            <!--
+                        <AppenderRef ref="Console"/>
+            -->
+            <AppenderRef ref="DG2"/>
+        </Root>
+    </Loggers>
+</Configuration>
