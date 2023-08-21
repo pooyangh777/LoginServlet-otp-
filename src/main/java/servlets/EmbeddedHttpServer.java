@@ -3,6 +3,7 @@ package servlets;
 import dto.MyAppProperties;
 import filter.OtpFilter;
 import jakarta.servlet.DispatcherType;
+import lombok.extern.slf4j.Slf4j;
 import org.eclipse.jetty.http.HttpVersion;
 import org.eclipse.jetty.server.*;
 import org.eclipse.jetty.servlet.ServletContextHandler;
@@ -12,7 +13,7 @@ import javax.net.ssl.SSLServerSocketFactory;
 import java.io.File;
 import java.util.*;
 import java.util.concurrent.ArrayBlockingQueue;
-
+@Slf4j
 public class EmbeddedHttpServer {
     private Server server;
     private QueuedThreadPool pool;
@@ -23,25 +24,26 @@ public class EmbeddedHttpServer {
         assert config != null;
         oauth2Service = new Oauth2Service(config);
         pool = new QueuedThreadPool(
-                2000,
-                1000,
-                30000,
+                config.getHTTP_MAX_THREAD(),
+                config.getHTTP_MIN_THREAD(),
+                config.getHTTP_IDLE_TIMEOUT(),
                 queue);
         server = new Server(pool);
         HttpConfiguration http_config = new HttpConfiguration();
         http_config.setSecureScheme("https");
-        http_config.setSecurePort(8043);
-        http_config.setOutputBufferSize(32768);
+        http_config.setSecurePort(config.getHTTPS_PORT());
+        http_config.setOutputBufferSize(config.getHTTP_OUT_PUT_BUFFER_SIZE());
         http_config.setSendServerVersion(false);
 
         List<Connector> connectors = new ArrayList<>();
         ServerConnector httpConnector = new ServerConnector(server, new HttpConnectionFactory(http_config));
-        httpConnector.setPort(8080);
-        httpConnector.setIdleTimeout(30000);
+        httpConnector.setPort(config.getHTTP_PORT());
+        httpConnector.setIdleTimeout(config.getHTTP_IDLE_TIMEOUT());
         connectors.add(httpConnector);
-        System.out.println("Async HTTP connector started. HTTP port: " + 8080);
+        log.info("Async HTTP connector started. HTTP port: " + config.getHTTP_PORT());
 
-        File keyFile = new File(getClass().getClassLoader().getResource("keystore.jks").getFile());
+//        File keyFile = new File(getClass().getClassLoader().getResource("keystore.jks").getFile());
+        File keyFile = new File(config.getKEYSTORE_PATH());
         ;
         if (keyFile != null && keyFile.exists()) {
             try {
@@ -56,7 +58,7 @@ public class EmbeddedHttpServer {
                 for (String defaultCipher : defaultCiphers) {
                     ciphers.put(defaultCipher, Boolean.TRUE);
                 }
-                System.out.println("*** Available ciphers ***\nDefault\tCipher");
+                log.info("*** Available ciphers ***\nDefault\tCipher");
                 for (Object o : ciphers.entrySet()) {
                     Map.Entry cipher = (Map.Entry) o;
                     if (Boolean.TRUE.equals(cipher.getValue())) {
@@ -70,11 +72,11 @@ public class EmbeddedHttpServer {
 
                 SslContextFactory.Server sslContextFactory = new SslContextFactory.Server();
                 sslContextFactory.setKeyStorePath(keyFile.getAbsolutePath());
-                sslContextFactory.setKeyStorePassword("123456");
-                sslContextFactory.setIncludeCipherSuites("TLS_ECDHE_.*", "TLS_EMPTY_RENEGOTIATION_INFO_SCSV", "TLS_RSA_.*");
-                sslContextFactory.setExcludeCipherSuites(".*NULL.*", ".*RC4.*", ".*MD5.*", ".*DES.*", ".*DSS.*", "TLS_DHE_.*");
-                sslContextFactory.setIncludeProtocols("TLSv1", "TLSv1.1", "TLSv1.2", "SSLv2Hello");
-                sslContextFactory.setExcludeProtocols("SSL", "SSLv3");
+                sslContextFactory.setKeyStorePassword(config.getKEYSTORE_PASSWORD());
+                sslContextFactory.setIncludeCipherSuites(config.getHTTPS_INCLUDE_CIPHER());
+                sslContextFactory.setExcludeCipherSuites(config.getHTTPS_EXCLUDE_CIPHER());
+                sslContextFactory.setIncludeProtocols(config.getHTTPS_INCLUDE_PROTOCOLS());
+                sslContextFactory.setExcludeProtocols(config.getHTTPS_EXCLUDE_PROTOCOLS());
                 sslContextFactory.setRenegotiationAllowed(false);   //prevent attack
 
                 HttpConfiguration https_config = new HttpConfiguration(http_config);
@@ -85,11 +87,11 @@ public class EmbeddedHttpServer {
                 ServerConnector httpsConnector = new ServerConnector(server,
                         new SslConnectionFactory(sslContextFactory, HttpVersion.HTTP_1_1.asString()),
                         new HttpConnectionFactory(https_config));
-                httpsConnector.setPort(8043);
-                httpsConnector.setAcceptQueueSize(100);
-                httpsConnector.setIdleTimeout(30000);
+                httpsConnector.setPort(config.getHTTPS_PORT());
+                httpsConnector.setAcceptQueueSize(config.getHTTP_POOL_SIZE());
+                httpsConnector.setIdleTimeout(config.getHTTP_IDLE_TIMEOUT());
                 connectors.add(httpsConnector);
-                System.out.println("Async HTTPS connector started. HTTPS port: " + 8043);
+                log.info("Async HTTPS connector started. HTTPS port: " + config.getHTTPS_PORT());
 
                 // Add connector to server
                 server.setConnectors(connectors.toArray(new Connector[0]));
@@ -101,14 +103,15 @@ public class EmbeddedHttpServer {
                 handler.addServlet(Verify.class, "/verify");
                 handler.addServlet(Refresh.class, "/refresh");
             } catch (Exception ex) {
-                System.out.println("Can not initialize SSL" + ex);
+                log.info("Can not initialize SSL" + ex);
             }
         } else {
-            System.out.println("Async HTTPS not initialized because keystore is not available");
+            log.info("Async HTTPS not initialized because keystore is not available");
         }
 
         try {
             server.start();
+            log.info("backTalk is running ...");
         } catch (
                 Exception e) {
             throw new RuntimeException(e);
@@ -119,7 +122,7 @@ public class EmbeddedHttpServer {
         try {
             server.stop();
         } catch (Exception e) {
-            System.out.println("An exception occurred " + e);
+            log.info("An exception occurred " + e);
         }
     }
     QueuedThreadPool getPool() {

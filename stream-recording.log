@@ -1,0 +1,92 @@
+INFO  [main] 2023-08-20 16:46:37,165 application.Main [] - ***************************************************************************************
+INFO  [main] 2023-08-20 16:46:37,234 servlets.EmbeddedHttpServer [] - Async HTTP connector started. HTTP port: 8080
+INFO  [main] 2023-08-20 16:46:37,410 servlets.EmbeddedHttpServer [] - *** Available ciphers ***
+Default	Cipher
+INFO  [main] 2023-08-20 16:46:37,428 servlets.EmbeddedHttpServer [] - Async HTTPS connector started. HTTPS port: 8043
+INFO  [main] 2023-08-20 16:46:37,629 servlets.EmbeddedHttpServer [] - backTalk is running ...
+WARN  [qtp736920911-52] 2023-08-20 16:47:20,082 org.eclipse.jetty.server.HttpChannel [] - handleException /api/oauth2/otp/handshake org.eclipse.jetty.http.BadMessageException: 400: Invalid SNI
+WARN  [qtp736920911-52] 2023-08-20 16:47:20,082 org.eclipse.jetty.server.HttpChannel [] - handleException /api/oauth2/otp/handshake org.eclipse.jetty.http.BadMessageException: 400: Invalid SNI
+WARN  [qtp736920911-48] 2023-08-20 16:49:30,839 org.eclipse.jetty.server.HttpChannel [] - handleException /api/oauth2/otp/handshake org.eclipse.jetty.http.BadMessageException: 400: Invalid SNI
+WARN  [qtp736920911-48] 2023-08-20 16:49:30,839 org.eclipse.jetty.server.HttpChannel [] - handleException /api/oauth2/otp/handshake org.eclipse.jetty.http.BadMessageException: 400: Invalid SNI
+INFO  [main] 2023-08-20 16:50:09,779 application.Main [] - ***************************************************************************************
+INFO  [main] 2023-08-20 16:50:10,092 servlets.EmbeddedHttpServer [] - Async HTTP connector started. HTTP port: 8080
+INFO  [main] 2023-08-20 16:51:24,629 servlets.EmbeddedHttpServer [] - *** Available ciphers ***
+Default	Cipher
+INFO  [main] 2023-08-20 16:51:24,696 servlets.EmbeddedHttpServer [] - Async HTTPS connector started. HTTPS port: 8043
+INFO  [main] 2023-08-20 16:51:25,630 servlets.EmbeddedHttpServer [] - backTalk is running ...
+INFO  [main] 2023-08-20 18:39:46,675 application.Main [] - ***************************************************************************************
+INFO  [main] 2023-08-20 18:39:46,777 servlets.EmbeddedHttpServer [] - Async HTTP connector started. HTTP port: 8080
+INFO  [main] 2023-08-20 18:39:46,985 servlets.EmbeddedHttpServer [] - *** Available ciphers ***
+Default	Cipher
+INFO  [main] 2023-08-20 18:39:47,005 servlets.EmbeddedHttpServer [] - Async HTTPS connector started. HTTPS port: 8043
+INFO  [main] 2023-08-20 18:39:47,273 servlets.EmbeddedHttpServer [] - backTalk is running ...
+WARN  [qtp736920911-44] 2023-08-20 18:41:38,704 org.eclipse.jetty.server.HttpChannel [] - handleException /api/oauth2/otp/handshake org.eclipse.jetty.http.BadMessageException: 400: Invalid SNI
+WARN  [qtp736920911-44] 2023-08-20 18:41:38,704 org.eclipse.jetty.server.HttpChannel [] - handleException /api/oauth2/otp/handshake org.eclipse.jetty.http.BadMessageException: 400: Invalid SNI
+WARN  [qtp736920911-43] 2023-08-20 18:57:55,116 org.eclipse.jetty.server.HttpChannel [] - handleException /api/oauth2/otp/handshake org.eclipse.jetty.http.BadMessageException: 400: Invalid SNI
+WARN  [qtp736920911-43] 2023-08-20 18:57:55,116 org.eclipse.jetty.server.HttpChannel [] - handleException /api/oauth2/otp/handshake org.eclipse.jetty.http.BadMessageException: 400: Invalid SNI
+INFO  [main] 2023-08-20 18:58:44,771 application.Main [] - ***************************************************************************************
+INFO  [main] 2023-08-20 18:58:45,305 servlets.EmbeddedHttpServer [] - Async HTTP connector started. HTTP port: 8080
+INFO  [main] 2023-08-20 18:58:51,981 servlets.EmbeddedHttpServer [] - *** Available ciphers ***
+Default	Cipher
+INFO  [main] 2023-08-20 18:58:52,026 servlets.EmbeddedHttpServer [] - Async HTTPS connector started. HTTPS port: 8043
+INFO  [main] 2023-08-20 18:58:52,788 servlets.EmbeddedHttpServer [] - backTalk is running ...
+WARN  [qtp144040807-28] 2023-08-20 18:58:57,573 org.eclipse.jetty.server.HttpChannel [] - handleException /api/oauth2/otp/handshake org.eclipse.jetty.http.BadMessageException: 400: Invalid SNI
+WARN  [qtp144040807-28] 2023-08-20 18:58:57,573 org.eclipse.jetty.server.HttpChannel [] - handleException /api/oauth2/otp/handshake org.eclipse.jetty.http.BadMessageException: 400: Invalid SNI
+WARN  [qtp144040807-42] 2023-08-20 19:00:07,824 org.eclipse.jetty.server.HttpChannel [] - handleException /api/oauth2/otp/handshake org.eclipse.jetty.http.BadMessageException: 400: Invalid SNI
+WARN  [qtp144040807-42] 2023-08-20 19:00:07,824 org.eclipse.jetty.server.HttpChannel [] - handleException /api/oauth2/otp/handshake org.eclipse.jetty.http.BadMessageException: 400: Invalid SNI
+WARN  [qtp144040807-34] 2023-08-20 19:01:08,780 org.eclipse.jetty.server.HttpChannel [] - handleException /api/oauth2/otp/handshake org.eclipse.jetty.http.BadMessageException: 400: Invalid SNI
+WARN  [qtp144040807-34] 2023-08-20 19:01:08,780 org.eclipse.jetty.server.HttpChannel [] - handleException /api/oauth2/otp/handshake org.eclipse.jetty.http.BadMessageException: 400: Invalid SNI
+INFO  [main] 2023-08-20 19:07:52,573 application.Main [] - ***************************************************************************************
+INFO  [main] 2023-08-20 19:07:52,648 servlets.EmbeddedHttpServer [] - Async HTTP connector started. HTTP port: 8080
+INFO  [main] 2023-08-20 19:07:52,821 servlets.EmbeddedHttpServer [] - *** Available ciphers ***
+Default	Cipher
+INFO  [main] 2023-08-20 19:07:52,838 servlets.EmbeddedHttpServer [] - Async HTTPS connector started. HTTPS port: 8043
+INFO  [main] 2023-08-20 19:07:53,046 servlets.EmbeddedHttpServer [] - backTalk is running ...
+WARN  [qtp736920911-33] 2023-08-20 19:08:02,412 org.eclipse.jetty.server.HttpChannel [] - handleException /api/oauth2/otp/handshake org.eclipse.jetty.http.BadMessageException: 400: Invalid SNI
+WARN  [qtp736920911-33] 2023-08-20 19:08:02,412 org.eclipse.jetty.server.HttpChannel [] - handleException /api/oauth2/otp/handshake org.eclipse.jetty.http.BadMessageException: 400: Invalid SNI
+WARN  [qtp736920911-26] 2023-08-20 19:11:56,044 org.eclipse.jetty.server.HttpChannel [] - handleException /api/oauth2/otp/refresh org.eclipse.jetty.http.BadMessageException: 400: Invalid SNI
+WARN  [qtp736920911-26] 2023-08-20 19:11:56,044 org.eclipse.jetty.server.HttpChannel [] - handleException /api/oauth2/otp/refresh org.eclipse.jetty.http.BadMessageException: 400: Invalid SNI
+INFO  [main] 2023-08-21 08:27:33,787 application.Main [] - ***************************************************************************************
+INFO  [main] 2023-08-21 08:27:33,852 servlets.EmbeddedHttpServer [] - Async HTTP connector started. HTTP port: 8080
+INFO  [main] 2023-08-21 08:27:33,986 servlets.EmbeddedHttpServer [] - *** Available ciphers ***
+Default	Cipher
+INFO  [main] 2023-08-21 08:27:34,000 servlets.EmbeddedHttpServer [] - Async HTTPS connector started. HTTPS port: 8043
+INFO  [main] 2023-08-21 08:27:34,157 servlets.EmbeddedHttpServer [] - backTalk is running ...
+WARN  [qtp736920911-38] 2023-08-21 08:31:24,604 org.eclipse.jetty.server.HttpChannel [] - handleException /api/oauth2/otp/authorize org.eclipse.jetty.http.BadMessageException: 400: Invalid SNI
+WARN  [qtp736920911-38] 2023-08-21 08:31:24,604 org.eclipse.jetty.server.HttpChannel [] - handleException /api/oauth2/otp/authorize org.eclipse.jetty.http.BadMessageException: 400: Invalid SNI
+WARN  [qtp736920911-36] 2023-08-21 08:31:59,136 org.eclipse.jetty.server.HttpChannel [] - handleException /api/oauth2/otp/handshake org.eclipse.jetty.http.BadMessageException: 400: Invalid SNI
+WARN  [qtp736920911-36] 2023-08-21 08:31:59,136 org.eclipse.jetty.server.HttpChannel [] - handleException /api/oauth2/otp/handshake org.eclipse.jetty.http.BadMessageException: 400: Invalid SNI
+WARN  [qtp736920911-38] 2023-08-21 08:33:01,466 org.eclipse.jetty.server.HttpChannel [] - handleException /api/oauth2/otp/handshake org.eclipse.jetty.http.BadMessageException: 400: Invalid SNI
+WARN  [qtp736920911-38] 2023-08-21 08:33:01,466 org.eclipse.jetty.server.HttpChannel [] - handleException /api/oauth2/otp/handshake org.eclipse.jetty.http.BadMessageException: 400: Invalid SNI
+INFO  [main] 2023-08-21 09:37:54,297 application.Main [] - ***************************************************************************************
+INFO  [main] 2023-08-21 09:37:54,342 servlets.EmbeddedHttpServer [] - Async HTTP connector started. HTTP port: 8080
+INFO  [main] 2023-08-21 09:37:54,458 servlets.EmbeddedHttpServer [] - *** Available ciphers ***
+Default	Cipher
+INFO  [main] 2023-08-21 09:37:54,472 servlets.EmbeddedHttpServer [] - Async HTTPS connector started. HTTPS port: 8043
+INFO  [main] 2023-08-21 09:37:54,596 servlets.EmbeddedHttpServer [] - backTalk is running ...
+INFO  [main] 2023-08-21 10:50:34,216 application.Main [] - ***************************************************************************************
+INFO  [main] 2023-08-21 10:50:34,262 servlets.EmbeddedHttpServer [] - Async HTTP connector started. HTTP port: 8080
+INFO  [main] 2023-08-21 10:50:34,374 servlets.EmbeddedHttpServer [] - *** Available ciphers ***
+Default	Cipher
+INFO  [main] 2023-08-21 10:50:34,386 servlets.EmbeddedHttpServer [] - Async HTTPS connector started. HTTPS port: 8043
+INFO  [main] 2023-08-21 10:50:34,511 servlets.EmbeddedHttpServer [] - backTalk is running ...
+INFO  [main] 2023-08-21 10:53:03,949 application.Main [] - ***************************************************************************************
+INFO  [main] 2023-08-21 10:53:03,993 servlets.EmbeddedHttpServer [] - Async HTTP connector started. HTTP port: 8080
+INFO  [main] 2023-08-21 10:53:04,110 servlets.EmbeddedHttpServer [] - *** Available ciphers ***
+Default	Cipher
+INFO  [main] 2023-08-21 10:53:04,124 servlets.EmbeddedHttpServer [] - Async HTTPS connector started. HTTPS port: 8043
+INFO  [main] 2023-08-21 10:53:04,271 servlets.EmbeddedHttpServer [] - backTalk is running ...
+INFO  [main] 2023-08-21 11:33:45,397 application.Main [] - ***************************************************************************************
+INFO  [main] 2023-08-21 11:33:45,445 servlets.EmbeddedHttpServer [] - Async HTTP connector started. HTTP port: 8080
+INFO  [main] 2023-08-21 11:33:45,553 servlets.EmbeddedHttpServer [] - *** Available ciphers ***
+Default	Cipher
+INFO  [main] 2023-08-21 11:33:45,565 servlets.EmbeddedHttpServer [] - Async HTTPS connector started. HTTPS port: 8043
+INFO  [main] 2023-08-21 11:33:45,695 servlets.EmbeddedHttpServer [] - backTalk is running ...
+INFO  [main] 2023-08-21 11:36:15,305 application.Main [] - ***************************************************************************************
+INFO  [main] 2023-08-21 11:36:30,477 application.Main [] - ***************************************************************************************
+INFO  [main] 2023-08-21 11:37:03,720 application.Main [] - ***************************************************************************************
+INFO  [main] 2023-08-21 11:37:03,765 servlets.EmbeddedHttpServer [] - Async HTTP connector started. HTTP port: 8080
+INFO  [main] 2023-08-21 11:37:03,886 servlets.EmbeddedHttpServer [] - *** Available ciphers ***
+Default	Cipher
+INFO  [main] 2023-08-21 11:37:03,898 servlets.EmbeddedHttpServer [] - Async HTTPS connector started. HTTPS port: 8043
+INFO  [main] 2023-08-21 11:37:04,016 servlets.EmbeddedHttpServer [] - backTalk is running ...

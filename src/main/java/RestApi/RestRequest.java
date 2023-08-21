@@ -1,6 +1,7 @@
 package RestApi;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.extern.slf4j.Slf4j;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -9,10 +10,12 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Map;
-
+@Slf4j
 public class RestRequest {
     public static <T> T post(String url, Map<String, ?> body, Map<String, String> header, Class<T> aClass) {
         try {
+
+
             URL urlObj = new URL(url);
             HttpURLConnection conn = (HttpURLConnection) urlObj.openConnection();
             conn.setRequestMethod("POST");
@@ -32,7 +35,7 @@ public class RestRequest {
             int responseCode = conn.getResponseCode();
 
             if (responseCode != HttpURLConnection.HTTP_OK) {
-                System.out.println("response is not 200 " + responseCode);
+                log.info("response is not 200 " + responseCode);
             }
 
             BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));

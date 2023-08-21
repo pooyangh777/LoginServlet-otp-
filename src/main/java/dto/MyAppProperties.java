@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.IOUtils;
 //import org.apache.commons.io.IOUtils;
 
@@ -21,6 +22,7 @@ import java.nio.file.Paths;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Slf4j
 public class MyAppProperties {
     private String serverUrl;
     private String clientId;
@@ -30,6 +32,21 @@ public class MyAppProperties {
     private String scope;
     private String otpSignature;
     private Integer serverPort;
+    private String KEYSTORE_PATH;
+    private String KEYSTORE_PASSWORD;
+    private int HTTP_PORT;
+    private int HTTPS_PORT;
+    private String[] HTTPS_INCLUDE_PROTOCOLS;
+    private String[] HTTPS_EXCLUDE_PROTOCOLS;
+    private String[] HTTPS_INCLUDE_CIPHER;
+    private String[] HTTPS_EXCLUDE_CIPHER;
+    private int HTTP_OUT_PUT_BUFFER_SIZE;
+    private int HTTP_IDLE_TIMEOUT;
+    private int HTTP_POOL_SIZE;
+    private int HTTP_MIN_THREAD;
+    private int HTTP_MAX_THREAD;
+    private int HTTP_QUEUE_SIZE;
+
 
     public static MyAppProperties loadResourceConfig() throws IOException, NullPointerException, InvalidPathException {
         InputStream inputStream = Main.class.getResourceAsStream("/config.json");
@@ -53,7 +70,7 @@ public class MyAppProperties {
         }
         byte[] externalConfigContent = Files.readAllBytes(path);
         String fileContent = new String(externalConfigContent);
-        System.out.println("Loading config file from external.");
+        log.info("Loading config file from external.");
         return new Gson().fromJson(fileContent, MyAppProperties.class);
     }
 }
