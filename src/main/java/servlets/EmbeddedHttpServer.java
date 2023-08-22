@@ -9,10 +9,12 @@ import org.eclipse.jetty.server.*;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.util.ssl.SslContextFactory;
 import org.eclipse.jetty.util.thread.QueuedThreadPool;
+
 import javax.net.ssl.SSLServerSocketFactory;
 import java.io.File;
 import java.util.*;
 import java.util.concurrent.ArrayBlockingQueue;
+
 @Slf4j
 public class EmbeddedHttpServer {
     private Server server;
@@ -102,6 +104,7 @@ public class EmbeddedHttpServer {
                 handler.addServlet(Authorize.class, "/authorize");
                 handler.addServlet(Verify.class, "/verify");
                 handler.addServlet(Refresh.class, "/refresh");
+                handler.addServlet(Status.class, "/status");
             } catch (Exception ex) {
                 log.info("Can not initialize SSL" + ex);
             }
@@ -125,6 +128,7 @@ public class EmbeddedHttpServer {
             log.info("An exception occurred " + e);
         }
     }
+
     QueuedThreadPool getPool() {
         return pool;
     }

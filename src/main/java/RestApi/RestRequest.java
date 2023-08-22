@@ -10,12 +10,13 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Map;
+
 @Slf4j
 public class RestRequest {
-    public static <T> T post(String url, Map<String, ?> body, Map<String, String> header, Class<T> aClass) {
+    public static <T> T post(String url, Map<String, ?> body, Map<String, String> header, Class<T> aClass, String owner) {
         try {
-
-
+            log.info("post request " + owner);
+            long startTime = System.currentTimeMillis();
             URL urlObj = new URL(url);
             HttpURLConnection conn = (HttpURLConnection) urlObj.openConnection();
             conn.setRequestMethod("POST");
@@ -45,11 +46,13 @@ public class RestRequest {
                 responseBuilder.append(line);
             }
             in.close();
+            long endTime = System.currentTimeMillis();
+            long elapsedTime = endTime - startTime;
+            log.info("Response time of " + owner + " from sso is : " + elapsedTime + " ms");
 
             return new ObjectMapper().readValue(responseBuilder.toString(), aClass);
 
         } catch (IOException e) {
-            e.printStackTrace();
             throw new RuntimeException(e);
         }
     }

@@ -3,9 +3,10 @@ package filter;
 import jakarta.servlet.*;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
-
+@Slf4j
 public class OtpFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
@@ -18,7 +19,7 @@ public class OtpFilter implements Filter {
         HttpServletRequest httpRequest = (HttpServletRequest) request;
         HttpServletResponse httpResponse = (HttpServletResponse) response;
         // Check if the request is for the specific servlet where keyId is not required
-        if (httpRequest.getServletPath().equals("/handshake")) {
+        if (httpRequest.getServletPath().equals("/handshake") || httpRequest.getServletPath().equals("/status")) {
             // Allow the request to proceed without checking the keyId header
             chain.doFilter(request, response);
         } else {
@@ -31,6 +32,7 @@ public class OtpFilter implements Filter {
                 // The keyId header is missing, return an error response
                 httpResponse.setStatus(HttpServletResponse.SC_BAD_REQUEST);
                 httpResponse.getWriter().write("Missing keyId header");
+                log.info("Missing keyId header");
             }
         }
     }

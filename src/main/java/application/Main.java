@@ -14,12 +14,12 @@ import java.net.URISyntaxException;
 public class Main {
     public static void main(String[] args) {
 
-        String filePath = "/etc/java/talkback/settings.json";
+//        String filePath = "/etc/java/talkback/settings.json";
         MyAppProperties config = null;
         try {
-            config = MyAppProperties.loadExternalConfig(filePath);
-//            config = MyAppProperties.loadResourceConfig();
-        } catch (IOException | URISyntaxException e) {
+//            config = MyAppProperties.loadExternalConfig(filePath);
+            config = MyAppProperties.loadResourceConfig();
+        } catch (IOException e) {
             log.info("setting file is null");
         }
         log.info("***************************************************************************************");

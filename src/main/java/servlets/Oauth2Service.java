@@ -15,7 +15,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Oauth2Service {
-    private  static String serverUrl;
+    private static String serverUrl;
     private static String clientId;
     private static String clientSecret;
     private static String apiToken;
@@ -65,7 +65,7 @@ public class Oauth2Service {
         header.put("Content-Type", "application/x-www-form-urlencoded");
         header.put("Accept-Language", "fa");
 
-        dto.otp.Handshake handshake = RestRequest.post(urlBuilder.toString(), (Map) null, header, dto.otp.Handshake.class);
+        dto.otp.Handshake handshake = RestRequest.post(urlBuilder.toString(), (Map) null, header, dto.otp.Handshake.class, "handshake for : " + "(" + deviceUID + ")");
         return handshake;
     }
 
@@ -82,7 +82,7 @@ public class Oauth2Service {
 
         Map<String, String> header = getSignHeaderMap(keyId);
 
-        dto.otp.Authorize authorize = RestRequest.post(urlBuilder.toString(), (Map) null, header, dto.otp.Authorize.class);
+        dto.otp.Authorize authorize = RestRequest.post(urlBuilder.toString(), (Map) null, header, dto.otp.Authorize.class, "authorize for : " + "(" + keyId + ")");
         return authorize;
     }
 
@@ -93,7 +93,7 @@ public class Oauth2Service {
                     "?" + "otp=" + otp;
 
             Map<String, String> header = getSignHeaderMap(keyId);
-            dto.otp.Verify verify = RestRequest.post(builder, (Map) null, header, dto.otp.Verify.class);
+            dto.otp.Verify verify = RestRequest.post(builder, (Map) null, header, dto.otp.Verify.class, "verify for : " + "(" + keyId + ")");
 
             return getOtpAccessToken(verify.getCode(), keyId);
         } catch (IOException e) {
@@ -112,14 +112,14 @@ public class Oauth2Service {
 
         Map<String, String> header = getSignHeaderMap(keyId);
 
-        AccessToken accessToken = RestRequest.post(builder, (Map) null, header, AccessToken.class);
+        AccessToken accessToken = RestRequest.post(builder, (Map) null, header, AccessToken.class, "accessToken for : " + "(" + keyId + ")");
 
         return accessToken;
     }
 
     public static AccessToken refresh(String refreshToken) {
 
-        String builder = "https://sso-sandbox.pod.ir" +
+        String builder = serverUrl +
                 "/oauth2/token/" +
                 "?" + "grant_type=" + "refresh_token" +
                 "&" + "refresh_token=" + refreshToken +
@@ -130,7 +130,7 @@ public class Oauth2Service {
         Map<String, String> header = new HashMap<>();
         header.put("Content-Type", "application/x-www-form-urlencoded");
         header.put("Accept-Language", "fa");
-        AccessToken accessToken = RestRequest.post(builder, new HashMap<>(), header, AccessToken.class);
+        AccessToken accessToken = RestRequest.post(builder, new HashMap<>(), header, AccessToken.class, "refresh for : " + "(" + refreshToken + ")");
         return accessToken;
     }
 
