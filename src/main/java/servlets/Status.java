@@ -11,6 +11,6 @@ public class Status extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setStatus(HttpServletResponse.SC_OK);
-        response.getWriter().println("Service is currently running... ");
+        response.getWriter().println("TalkBack service is currently running... ");
     }
 }

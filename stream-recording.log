@@ -32,3 +32,444 @@ INFO  [qtp736920911-33] 2023-08-22 13:20:06,735 servlets.Authorize [] - receive 
 INFO  [qtp736920911-33] 2023-08-22 13:20:06,735 RestApi.RestRequest [] - post request authorize for : (9501901a2a251d81690714478)
 INFO  [qtp736920911-33] 2023-08-22 13:20:06,960 RestApi.RestRequest [] - Response time of authorize for : (9501901a2a251d81690714478) from sso is : 225 ms
 INFO  [qtp736920911-33] 2023-08-22 13:20:06,961 servlets.Authorize [] - Response time of authorize from talkback for : (9501901a2a251d81690714478) is 226 ms
+INFO  [main] 2023-08-22 13:41:01,809 application.Main [] - ***************************************************************************************
+INFO  [main] 2023-08-22 13:41:01,855 servlets.EmbeddedHttpServer [] - Async HTTP connector started. HTTP port: 8080
+INFO  [main] 2023-08-22 13:41:01,977 servlets.EmbeddedHttpServer [] - *** Available ciphers ***
+Default	Cipher
+INFO  [main] 2023-08-22 13:41:01,989 servlets.EmbeddedHttpServer [] - Async HTTPS connector started. HTTPS port: 8043
+INFO  [main] 2023-08-22 13:41:02,118 servlets.EmbeddedHttpServer [] - backTalk is running ...
+INFO  [qtp736920911-19] 2023-08-22 14:39:39,547 servlets.Refresh [] - receive request from (6c62c39fc19c4cf597226108527688d7.XzIwMjM4) for refreshToken
+INFO  [qtp736920911-19] 2023-08-22 14:39:39,559 RestApi.RestRequest [] - post request refresh for : (6c62c39fc19c4cf597226108527688d7.XzIwMjM4)
+INFO  [qtp736920911-19] 2023-08-22 14:39:42,090 RestApi.RestRequest [] - Response time of refresh for : (6c62c39fc19c4cf597226108527688d7.XzIwMjM4) from sso is : 2531 ms
+INFO  [qtp736920911-19] 2023-08-22 14:39:42,153 servlets.Refresh [] - Response time of refresh from talkback for : (6c62c39fc19c4cf597226108527688d7.XzIwMjM4) is 2606 ms
+INFO  [main] 2023-08-23 09:05:58,599 application.Main [] - ***************************************************************************************
+INFO  [main] 2023-08-23 09:06:25,010 application.Main [] - ***************************************************************************************
+INFO  [main] 2023-08-23 09:06:25,092 servlets.EmbeddedHttpServer [] - Async HTTP connector started. HTTP port: 8080
+INFO  [main] 2023-08-23 09:06:25,271 servlets.EmbeddedHttpServer [] - *** Available ciphers ***
+Default	Cipher
+INFO  [main] 2023-08-23 09:06:25,295 servlets.EmbeddedHttpServer [] - Async HTTPS connector started. HTTPS port: 8043
+INFO  [main] 2023-08-23 09:06:25,499 servlets.EmbeddedHttpServer [] - backTalk is running ...
+INFO  [qtp736920911-64] 2023-08-23 09:07:38,526 servlets.Verify [] - receive request from (1464508155b0f1690093942) for verify
+INFO  [qtp736920911-64] 2023-08-23 09:07:38,528 RestApi.RestRequest [] - post request verify for : (1464508155b0f1690093942)
+INFO  [qtp736920911-64] 2023-08-23 09:07:51,243 RestApi.RestRequest [] - response is not 200 500
+INFO  [qtp736920911-64] 2023-08-23 09:07:51,243 RestApi.RestRequest [] - Server returned HTTP response code: 500 for URL: https://podtest.fanapsoft.ir/oauth2/otp/verify/09363842670?otp=409955
+WARN  [qtp736920911-64] 2023-08-23 09:07:51,244 org.eclipse.jetty.server.HttpChannel [] - /api/oauth2/otp/verify
+java.lang.RuntimeException: java.lang.RuntimeException: Server returned HTTP response code: 500 for URL: https://podtest.fanapsoft.ir/oauth2/otp/verify/09363842670?otp=409955
+	at servlets.Verify.doPost(Verify.java:28) ~[classes/:?]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:520) ~[jetty-jakarta-servlet-api-5.0.2.jar:?]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:587) ~[jetty-jakarta-servlet-api-5.0.2.jar:?]
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:764) ~[jetty-servlet-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.servlet.ServletHandler$ChainEnd.doFilter(ServletHandler.java:1665) ~[jetty-servlet-11.0.15.jar:11.0.15]
+	at filter.OtpFilter.doFilter(OtpFilter.java:30) ~[classes/:?]
+	at org.eclipse.jetty.servlet.FilterHolder.doFilter(FilterHolder.java:202) ~[jetty-servlet-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1635) ~[jetty-servlet-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:527) ~[jetty-servlet-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1381) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:176) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:484) ~[jetty-servlet-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:174) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1303) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:129) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.Server.handle(Server.java:563) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$0(HttpChannel.java:505) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:762) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:497) [jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:282) [jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:314) [jetty-io-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:100) [jetty-io-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.io.SelectableChannelEndPoint$1.run(SelectableChannelEndPoint.java:53) [jetty-io-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:969) [jetty-util-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.doRunJob(QueuedThreadPool.java:1194) [jetty-util-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1149) [jetty-util-11.0.15.jar:11.0.15]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+Caused by: java.lang.RuntimeException: Server returned HTTP response code: 500 for URL: https://podtest.fanapsoft.ir/oauth2/otp/verify/09363842670?otp=409955
+	at RestApi.RestRequest.post(RestRequest.java:57) ~[classes/:?]
+	at servlets.Oauth2Service.otpVerify(Oauth2Service.java:96) ~[classes/:?]
+	at servlets.Verify.doPost(Verify.java:26) ~[classes/:?]
+	... 28 more
+WARN  [qtp736920911-64] 2023-08-23 09:07:51,244 org.eclipse.jetty.server.HttpChannel [] - /api/oauth2/otp/verify
+java.lang.RuntimeException: java.lang.RuntimeException: Server returned HTTP response code: 500 for URL: https://podtest.fanapsoft.ir/oauth2/otp/verify/09363842670?otp=409955
+	at servlets.Verify.doPost(Verify.java:28) ~[classes/:?]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:520) ~[jetty-jakarta-servlet-api-5.0.2.jar:?]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:587) ~[jetty-jakarta-servlet-api-5.0.2.jar:?]
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:764) ~[jetty-servlet-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.servlet.ServletHandler$ChainEnd.doFilter(ServletHandler.java:1665) ~[jetty-servlet-11.0.15.jar:11.0.15]
+	at filter.OtpFilter.doFilter(OtpFilter.java:30) ~[classes/:?]
+	at org.eclipse.jetty.servlet.FilterHolder.doFilter(FilterHolder.java:202) ~[jetty-servlet-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1635) ~[jetty-servlet-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:527) ~[jetty-servlet-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1381) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:176) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:484) ~[jetty-servlet-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:174) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1303) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:129) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.Server.handle(Server.java:563) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$0(HttpChannel.java:505) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:762) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:497) [jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:282) [jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:314) [jetty-io-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:100) [jetty-io-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.io.SelectableChannelEndPoint$1.run(SelectableChannelEndPoint.java:53) [jetty-io-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:969) [jetty-util-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.doRunJob(QueuedThreadPool.java:1194) [jetty-util-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1149) [jetty-util-11.0.15.jar:11.0.15]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+Caused by: java.lang.RuntimeException: Server returned HTTP response code: 500 for URL: https://podtest.fanapsoft.ir/oauth2/otp/verify/09363842670?otp=409955
+	at RestApi.RestRequest.post(RestRequest.java:57) ~[classes/:?]
+	at servlets.Oauth2Service.otpVerify(Oauth2Service.java:96) ~[classes/:?]
+	at servlets.Verify.doPost(Verify.java:26) ~[classes/:?]
+	... 28 more
+INFO  [qtp736920911-20] 2023-08-23 09:09:24,284 filter.OtpFilter [] - Missing keyId header
+INFO  [qtp736920911-34] 2023-08-23 09:09:37,257 servlets.Handshake [] - receive request from : (081) for handshake
+INFO  [qtp736920911-34] 2023-08-23 09:09:37,259 RestApi.RestRequest [] - post request handshake for : (081)
+INFO  [qtp736920911-34] 2023-08-23 09:09:37,505 RestApi.RestRequest [] - Response time of handshake for : (081) from sso is : 246 ms
+INFO  [qtp736920911-34] 2023-08-23 09:09:37,568 servlets.Handshake [] - Response time of handshake from talkback for : (081) is 314 ms
+INFO  [qtp736920911-49] 2023-08-23 09:10:03,258 servlets.Verify [] - receive request from (1464508155b0f1690093942) for verify
+INFO  [qtp736920911-49] 2023-08-23 09:10:03,259 RestApi.RestRequest [] - post request verify for : (1464508155b0f1690093942)
+INFO  [qtp736920911-49] 2023-08-23 09:10:03,487 RestApi.RestRequest [] - response is not 200 400
+INFO  [qtp736920911-49] 2023-08-23 09:10:03,487 RestApi.RestRequest [] - Server returned HTTP response code: 400 for URL: https://podtest.fanapsoft.ir/oauth2/otp/verify/09363842670?otp=409955
+WARN  [qtp736920911-49] 2023-08-23 09:10:03,487 org.eclipse.jetty.server.HttpChannel [] - /api/oauth2/otp/verify
+java.lang.RuntimeException: java.lang.RuntimeException: Server returned HTTP response code: 400 for URL: https://podtest.fanapsoft.ir/oauth2/otp/verify/09363842670?otp=409955
+	at servlets.Verify.doPost(Verify.java:28) ~[classes/:?]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:520) ~[jetty-jakarta-servlet-api-5.0.2.jar:?]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:587) ~[jetty-jakarta-servlet-api-5.0.2.jar:?]
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:764) ~[jetty-servlet-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.servlet.ServletHandler$ChainEnd.doFilter(ServletHandler.java:1665) ~[jetty-servlet-11.0.15.jar:11.0.15]
+	at filter.OtpFilter.doFilter(OtpFilter.java:30) ~[classes/:?]
+	at org.eclipse.jetty.servlet.FilterHolder.doFilter(FilterHolder.java:202) ~[jetty-servlet-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1635) ~[jetty-servlet-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:527) ~[jetty-servlet-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1381) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:176) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:484) ~[jetty-servlet-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:174) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1303) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:129) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.Server.handle(Server.java:563) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$0(HttpChannel.java:505) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:762) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:497) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:282) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:314) ~[jetty-io-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:100) ~[jetty-io-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.io.SelectableChannelEndPoint$1.run(SelectableChannelEndPoint.java:53) ~[jetty-io-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:416) ~[jetty-util-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:385) ~[jetty-util-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:272) ~[jetty-util-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.lambda$new$0(AdaptiveExecutionStrategy.java:140) ~[jetty-util-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:411) [jetty-util-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:969) [jetty-util-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.doRunJob(QueuedThreadPool.java:1194) [jetty-util-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1149) [jetty-util-11.0.15.jar:11.0.15]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+Caused by: java.lang.RuntimeException: Server returned HTTP response code: 400 for URL: https://podtest.fanapsoft.ir/oauth2/otp/verify/09363842670?otp=409955
+	at RestApi.RestRequest.post(RestRequest.java:57) ~[classes/:?]
+	at servlets.Oauth2Service.otpVerify(Oauth2Service.java:96) ~[classes/:?]
+	at servlets.Verify.doPost(Verify.java:26) ~[classes/:?]
+	... 33 more
+WARN  [qtp736920911-49] 2023-08-23 09:10:03,487 org.eclipse.jetty.server.HttpChannel [] - /api/oauth2/otp/verify
+java.lang.RuntimeException: java.lang.RuntimeException: Server returned HTTP response code: 400 for URL: https://podtest.fanapsoft.ir/oauth2/otp/verify/09363842670?otp=409955
+	at servlets.Verify.doPost(Verify.java:28) ~[classes/:?]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:520) ~[jetty-jakarta-servlet-api-5.0.2.jar:?]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:587) ~[jetty-jakarta-servlet-api-5.0.2.jar:?]
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:764) ~[jetty-servlet-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.servlet.ServletHandler$ChainEnd.doFilter(ServletHandler.java:1665) ~[jetty-servlet-11.0.15.jar:11.0.15]
+	at filter.OtpFilter.doFilter(OtpFilter.java:30) ~[classes/:?]
+	at org.eclipse.jetty.servlet.FilterHolder.doFilter(FilterHolder.java:202) ~[jetty-servlet-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1635) ~[jetty-servlet-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:527) ~[jetty-servlet-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1381) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:176) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:484) ~[jetty-servlet-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:174) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1303) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:129) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.Server.handle(Server.java:563) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$0(HttpChannel.java:505) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:762) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:497) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:282) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:314) ~[jetty-io-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:100) ~[jetty-io-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.io.SelectableChannelEndPoint$1.run(SelectableChannelEndPoint.java:53) ~[jetty-io-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:416) ~[jetty-util-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:385) ~[jetty-util-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:272) ~[jetty-util-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.lambda$new$0(AdaptiveExecutionStrategy.java:140) ~[jetty-util-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:411) [jetty-util-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:969) [jetty-util-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.doRunJob(QueuedThreadPool.java:1194) [jetty-util-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1149) [jetty-util-11.0.15.jar:11.0.15]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+Caused by: java.lang.RuntimeException: Server returned HTTP response code: 400 for URL: https://podtest.fanapsoft.ir/oauth2/otp/verify/09363842670?otp=409955
+	at RestApi.RestRequest.post(RestRequest.java:57) ~[classes/:?]
+	at servlets.Oauth2Service.otpVerify(Oauth2Service.java:96) ~[classes/:?]
+	at servlets.Verify.doPost(Verify.java:26) ~[classes/:?]
+	... 33 more
+INFO  [qtp736920911-43] 2023-08-23 09:16:07,818 servlets.Authorize [] - receive request from : (1464508155b0f1690093942) for authorize
+WARN  [qtp736920911-43] 2023-08-23 09:16:07,819 org.eclipse.jetty.server.HttpChannel [] - /api/oauth2/otp/authorize
+java.lang.RuntimeException: java.lang.NullPointerException: Cannot invoke "String.length()" because "s" is null
+	at servlets.Authorize.doPost(Authorize.java:28) ~[classes/:?]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:520) ~[jetty-jakarta-servlet-api-5.0.2.jar:?]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:587) ~[jetty-jakarta-servlet-api-5.0.2.jar:?]
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:764) ~[jetty-servlet-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.servlet.ServletHandler$ChainEnd.doFilter(ServletHandler.java:1665) ~[jetty-servlet-11.0.15.jar:11.0.15]
+	at filter.OtpFilter.doFilter(OtpFilter.java:30) ~[classes/:?]
+	at org.eclipse.jetty.servlet.FilterHolder.doFilter(FilterHolder.java:202) ~[jetty-servlet-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1635) ~[jetty-servlet-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:527) ~[jetty-servlet-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1381) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:176) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:484) ~[jetty-servlet-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:174) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1303) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:129) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.Server.handle(Server.java:563) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$0(HttpChannel.java:505) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:762) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:497) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:282) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:314) ~[jetty-io-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:100) ~[jetty-io-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.io.SelectableChannelEndPoint$1.run(SelectableChannelEndPoint.java:53) ~[jetty-io-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:416) ~[jetty-util-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:385) ~[jetty-util-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:272) ~[jetty-util-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.lambda$new$0(AdaptiveExecutionStrategy.java:140) ~[jetty-util-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:411) [jetty-util-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:969) [jetty-util-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.doRunJob(QueuedThreadPool.java:1194) [jetty-util-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1149) [jetty-util-11.0.15.jar:11.0.15]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+Caused by: java.lang.NullPointerException: Cannot invoke "String.length()" because "s" is null
+	at java.net.URLEncoder.encode(URLEncoder.java:224) ~[?:?]
+	at java.net.URLEncoder.encode(URLEncoder.java:196) ~[?:?]
+	at servlets.Oauth2Service.otpAuthorize(Oauth2Service.java:77) ~[classes/:?]
+	at servlets.Authorize.doPost(Authorize.java:26) ~[classes/:?]
+	... 33 more
+WARN  [qtp736920911-43] 2023-08-23 09:16:07,819 org.eclipse.jetty.server.HttpChannel [] - /api/oauth2/otp/authorize
+java.lang.RuntimeException: java.lang.NullPointerException: Cannot invoke "String.length()" because "s" is null
+	at servlets.Authorize.doPost(Authorize.java:28) ~[classes/:?]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:520) ~[jetty-jakarta-servlet-api-5.0.2.jar:?]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:587) ~[jetty-jakarta-servlet-api-5.0.2.jar:?]
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:764) ~[jetty-servlet-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.servlet.ServletHandler$ChainEnd.doFilter(ServletHandler.java:1665) ~[jetty-servlet-11.0.15.jar:11.0.15]
+	at filter.OtpFilter.doFilter(OtpFilter.java:30) ~[classes/:?]
+	at org.eclipse.jetty.servlet.FilterHolder.doFilter(FilterHolder.java:202) ~[jetty-servlet-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1635) ~[jetty-servlet-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:527) ~[jetty-servlet-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1381) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:176) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:484) ~[jetty-servlet-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:174) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1303) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:129) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.Server.handle(Server.java:563) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$0(HttpChannel.java:505) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:762) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:497) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:282) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:314) ~[jetty-io-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:100) ~[jetty-io-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.io.SelectableChannelEndPoint$1.run(SelectableChannelEndPoint.java:53) ~[jetty-io-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:416) ~[jetty-util-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:385) ~[jetty-util-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:272) ~[jetty-util-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.lambda$new$0(AdaptiveExecutionStrategy.java:140) ~[jetty-util-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:411) [jetty-util-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:969) [jetty-util-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.doRunJob(QueuedThreadPool.java:1194) [jetty-util-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1149) [jetty-util-11.0.15.jar:11.0.15]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+Caused by: java.lang.NullPointerException: Cannot invoke "String.length()" because "s" is null
+	at java.net.URLEncoder.encode(URLEncoder.java:224) ~[?:?]
+	at java.net.URLEncoder.encode(URLEncoder.java:196) ~[?:?]
+	at servlets.Oauth2Service.otpAuthorize(Oauth2Service.java:77) ~[classes/:?]
+	at servlets.Authorize.doPost(Authorize.java:26) ~[classes/:?]
+	... 33 more
+INFO  [qtp736920911-49] 2023-08-23 09:17:34,280 servlets.Authorize [] - receive request from : (1464508155b0f169009394) for authorize
+INFO  [qtp736920911-49] 2023-08-23 09:17:34,282 RestApi.RestRequest [] - post request authorize for : (1464508155b0f169009394)
+INFO  [qtp736920911-49] 2023-08-23 09:17:34,393 RestApi.RestRequest [] - response is not 200 401
+INFO  [qtp736920911-49] 2023-08-23 09:17:34,393 RestApi.RestRequest [] - Server returned HTTP response code: 401 for URL: https://podtest.fanapsoft.ir/oauth2/otp/authorize/09363842670?response_type=code
+WARN  [qtp736920911-49] 2023-08-23 09:17:34,393 org.eclipse.jetty.server.HttpChannel [] - /api/oauth2/otp/authorize
+java.lang.RuntimeException: java.lang.RuntimeException: Server returned HTTP response code: 401 for URL: https://podtest.fanapsoft.ir/oauth2/otp/authorize/09363842670?response_type=code
+	at servlets.Authorize.doPost(Authorize.java:28) ~[classes/:?]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:520) ~[jetty-jakarta-servlet-api-5.0.2.jar:?]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:587) ~[jetty-jakarta-servlet-api-5.0.2.jar:?]
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:764) ~[jetty-servlet-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.servlet.ServletHandler$ChainEnd.doFilter(ServletHandler.java:1665) ~[jetty-servlet-11.0.15.jar:11.0.15]
+	at filter.OtpFilter.doFilter(OtpFilter.java:30) ~[classes/:?]
+	at org.eclipse.jetty.servlet.FilterHolder.doFilter(FilterHolder.java:202) ~[jetty-servlet-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1635) ~[jetty-servlet-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:527) ~[jetty-servlet-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1381) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:176) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:484) ~[jetty-servlet-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:174) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1303) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:129) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.Server.handle(Server.java:563) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$0(HttpChannel.java:505) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:762) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:497) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:282) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:314) ~[jetty-io-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:100) ~[jetty-io-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.io.SelectableChannelEndPoint$1.run(SelectableChannelEndPoint.java:53) ~[jetty-io-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:416) ~[jetty-util-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:385) ~[jetty-util-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:272) ~[jetty-util-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.lambda$new$0(AdaptiveExecutionStrategy.java:140) ~[jetty-util-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:411) [jetty-util-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:969) [jetty-util-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.doRunJob(QueuedThreadPool.java:1194) [jetty-util-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1149) [jetty-util-11.0.15.jar:11.0.15]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+Caused by: java.lang.RuntimeException: Server returned HTTP response code: 401 for URL: https://podtest.fanapsoft.ir/oauth2/otp/authorize/09363842670?response_type=code
+	at RestApi.RestRequest.post(RestRequest.java:57) ~[classes/:?]
+	at servlets.Oauth2Service.otpAuthorize(Oauth2Service.java:85) ~[classes/:?]
+	at servlets.Authorize.doPost(Authorize.java:26) ~[classes/:?]
+	... 33 more
+WARN  [qtp736920911-49] 2023-08-23 09:17:34,393 org.eclipse.jetty.server.HttpChannel [] - /api/oauth2/otp/authorize
+java.lang.RuntimeException: java.lang.RuntimeException: Server returned HTTP response code: 401 for URL: https://podtest.fanapsoft.ir/oauth2/otp/authorize/09363842670?response_type=code
+	at servlets.Authorize.doPost(Authorize.java:28) ~[classes/:?]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:520) ~[jetty-jakarta-servlet-api-5.0.2.jar:?]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:587) ~[jetty-jakarta-servlet-api-5.0.2.jar:?]
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:764) ~[jetty-servlet-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.servlet.ServletHandler$ChainEnd.doFilter(ServletHandler.java:1665) ~[jetty-servlet-11.0.15.jar:11.0.15]
+	at filter.OtpFilter.doFilter(OtpFilter.java:30) ~[classes/:?]
+	at org.eclipse.jetty.servlet.FilterHolder.doFilter(FilterHolder.java:202) ~[jetty-servlet-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1635) ~[jetty-servlet-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:527) ~[jetty-servlet-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1381) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:176) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:484) ~[jetty-servlet-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:174) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1303) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:129) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.Server.handle(Server.java:563) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$0(HttpChannel.java:505) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:762) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:497) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:282) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:314) ~[jetty-io-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:100) ~[jetty-io-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.io.SelectableChannelEndPoint$1.run(SelectableChannelEndPoint.java:53) ~[jetty-io-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:416) ~[jetty-util-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:385) ~[jetty-util-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:272) ~[jetty-util-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.lambda$new$0(AdaptiveExecutionStrategy.java:140) ~[jetty-util-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:411) [jetty-util-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:969) [jetty-util-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.doRunJob(QueuedThreadPool.java:1194) [jetty-util-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1149) [jetty-util-11.0.15.jar:11.0.15]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+Caused by: java.lang.RuntimeException: Server returned HTTP response code: 401 for URL: https://podtest.fanapsoft.ir/oauth2/otp/authorize/09363842670?response_type=code
+	at RestApi.RestRequest.post(RestRequest.java:57) ~[classes/:?]
+	at servlets.Oauth2Service.otpAuthorize(Oauth2Service.java:85) ~[classes/:?]
+	at servlets.Authorize.doPost(Authorize.java:26) ~[classes/:?]
+	... 33 more
+INFO  [qtp736920911-43] 2023-08-23 09:20:13,367 servlets.Authorize [] - receive request from : (1464508155b0f1690093942) for authorize
+INFO  [qtp736920911-43] 2023-08-23 09:20:13,367 RestApi.RestRequest [] - post request authorize for : (1464508155b0f1690093942)
+INFO  [qtp736920911-43] 2023-08-23 09:20:13,995 RestApi.RestRequest [] - Response time of authorize for : (1464508155b0f1690093942) from sso is : 628 ms
+INFO  [qtp736920911-43] 2023-08-23 09:20:13,996 servlets.Authorize [] - Response time of authorize from talkback for : (1464508155b0f1690093942) is 630 ms
+INFO  [main] 2023-08-23 10:02:32,520 application.Main [] - ***************************************************************************************
+INFO  [main] 2023-08-23 10:02:32,603 servlets.EmbeddedHttpServer [] - Async HTTP connector started. HTTP port: 8080
+INFO  [main] 2023-08-23 10:02:32,796 servlets.EmbeddedHttpServer [] - *** Available ciphers ***
+Default	Cipher
+INFO  [main] 2023-08-23 10:02:32,822 servlets.EmbeddedHttpServer [] - Async HTTPS connector started. HTTPS port: 8043
+INFO  [main] 2023-08-23 10:02:32,986 servlets.EmbeddedHttpServer [] - backTalk is running ...
+INFO  [qtp736920911-33] 2023-08-23 10:02:37,922 servlets.Authorize [] - receive request from : (1464508155b0f169009394) for authorize
+INFO  [qtp736920911-33] 2023-08-23 10:02:37,926 RestApi.RestRequest [] - post request authorize for : (1464508155b0f169009394)
+INFO  [qtp736920911-33] 2023-08-23 10:02:38,531 RestApi.RestRequest [] - response is not 200 401
+ERROR [qtp736920911-33] 2023-08-23 10:02:38,531 RestApi.RestRequest [] - Server returned HTTP response code: 401 for URL: https://podtest.fanapsoft.ir/oauth2/otp/authorize/09363842670?response_type=code
+WARN  [qtp736920911-33] 2023-08-23 10:02:38,531 org.eclipse.jetty.server.HttpChannel [] - /api/oauth2/otp/authorize
+java.lang.RuntimeException: java.lang.RuntimeException: Server returned HTTP response code: 401 for URL: https://podtest.fanapsoft.ir/oauth2/otp/authorize/09363842670?response_type=code
+	at servlets.Authorize.doPost(Authorize.java:28) ~[classes/:?]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:520) ~[jetty-jakarta-servlet-api-5.0.2.jar:?]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:587) ~[jetty-jakarta-servlet-api-5.0.2.jar:?]
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:764) ~[jetty-servlet-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.servlet.ServletHandler$ChainEnd.doFilter(ServletHandler.java:1665) ~[jetty-servlet-11.0.15.jar:11.0.15]
+	at filter.OtpFilter.doFilter(OtpFilter.java:30) ~[classes/:?]
+	at org.eclipse.jetty.servlet.FilterHolder.doFilter(FilterHolder.java:202) ~[jetty-servlet-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1635) ~[jetty-servlet-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:527) ~[jetty-servlet-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1381) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:176) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:484) ~[jetty-servlet-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:174) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1303) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:129) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.Server.handle(Server.java:563) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$0(HttpChannel.java:505) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:762) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:497) [jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:282) [jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:314) [jetty-io-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:100) [jetty-io-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.io.SelectableChannelEndPoint$1.run(SelectableChannelEndPoint.java:53) [jetty-io-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:969) [jetty-util-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.doRunJob(QueuedThreadPool.java:1194) [jetty-util-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1149) [jetty-util-11.0.15.jar:11.0.15]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+Caused by: java.lang.RuntimeException: Server returned HTTP response code: 401 for URL: https://podtest.fanapsoft.ir/oauth2/otp/authorize/09363842670?response_type=code
+	at RestApi.RestRequest.post(RestRequest.java:57) ~[classes/:?]
+	at servlets.Oauth2Service.otpAuthorize(Oauth2Service.java:85) ~[classes/:?]
+	at servlets.Authorize.doPost(Authorize.java:26) ~[classes/:?]
+	... 28 more
+WARN  [qtp736920911-33] 2023-08-23 10:02:38,531 org.eclipse.jetty.server.HttpChannel [] - /api/oauth2/otp/authorize
+java.lang.RuntimeException: java.lang.RuntimeException: Server returned HTTP response code: 401 for URL: https://podtest.fanapsoft.ir/oauth2/otp/authorize/09363842670?response_type=code
+	at servlets.Authorize.doPost(Authorize.java:28) ~[classes/:?]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:520) ~[jetty-jakarta-servlet-api-5.0.2.jar:?]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:587) ~[jetty-jakarta-servlet-api-5.0.2.jar:?]
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:764) ~[jetty-servlet-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.servlet.ServletHandler$ChainEnd.doFilter(ServletHandler.java:1665) ~[jetty-servlet-11.0.15.jar:11.0.15]
+	at filter.OtpFilter.doFilter(OtpFilter.java:30) ~[classes/:?]
+	at org.eclipse.jetty.servlet.FilterHolder.doFilter(FilterHolder.java:202) ~[jetty-servlet-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1635) ~[jetty-servlet-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:527) ~[jetty-servlet-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1381) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:176) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:484) ~[jetty-servlet-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:174) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1303) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:129) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.Server.handle(Server.java:563) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$0(HttpChannel.java:505) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:762) ~[jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:497) [jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:282) [jetty-server-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:314) [jetty-io-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:100) [jetty-io-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.io.SelectableChannelEndPoint$1.run(SelectableChannelEndPoint.java:53) [jetty-io-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:969) [jetty-util-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.doRunJob(QueuedThreadPool.java:1194) [jetty-util-11.0.15.jar:11.0.15]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1149) [jetty-util-11.0.15.jar:11.0.15]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+Caused by: java.lang.RuntimeException: Server returned HTTP response code: 401 for URL: https://podtest.fanapsoft.ir/oauth2/otp/authorize/09363842670?response_type=code
+	at RestApi.RestRequest.post(RestRequest.java:57) ~[classes/:?]
+	at servlets.Oauth2Service.otpAuthorize(Oauth2Service.java:85) ~[classes/:?]
+	at servlets.Authorize.doPost(Authorize.java:26) ~[classes/:?]
+	... 28 more
